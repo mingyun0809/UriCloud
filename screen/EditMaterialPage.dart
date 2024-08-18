@@ -25,8 +25,15 @@ class _EditMaterialState extends State<EditMaterial> {
   void initState() {
     super.initState();
     _materialNameController.text = widget.material['material_name'] ?? '';
-    selectedMaterial1 = widget.material['classification'];
+    selectedMaterial1 = widget.material['classcification'];
     selectedMaterial2 = widget.material['stock_unit'];
+
+    if(selectedMaterial1 != null && !MaterialClass1.contains(selectedMaterial1)) {
+      MaterialClass1.add(selectedMaterial1!);
+    }
+    if(selectedMaterial2 != null && !MaterialClass2.contains(selectedMaterial2)) {
+      MaterialClass2.add(selectedMaterial2!);
+    }
   }
 
   Future<void> _getImage() async {
@@ -112,7 +119,7 @@ class _EditMaterialState extends State<EditMaterial> {
                       width: 24,
                     ),
                     DropdownButton<String>(
-                      value: selectedMaterial1,
+                      value: selectedMaterial2,
                       items: MaterialClass1.map<DropdownMenuItem<String>>(
                             (String value) {
                           return DropdownMenuItem<String>(
@@ -123,7 +130,7 @@ class _EditMaterialState extends State<EditMaterial> {
                       ).toList(),
                       onChanged: (String? newValue) {
                         setState(() {
-                          selectedMaterial1 = newValue;
+                          selectedMaterial2 = newValue;
                         });
                       },
                     ),
@@ -147,7 +154,7 @@ class _EditMaterialState extends State<EditMaterial> {
                         width: 24,
                       ),
                       DropdownButton<String>(
-                        value: selectedMaterial2,
+                        value: selectedMaterial1,
                         items: MaterialClass2.map<DropdownMenuItem<String>>(
                               (String value) {
                             return DropdownMenuItem<String>(
@@ -158,7 +165,7 @@ class _EditMaterialState extends State<EditMaterial> {
                         ).toList(),
                         onChanged: (String? newValue) {
                           setState(() {
-                            selectedMaterial2 = newValue;
+                            selectedMaterial1 = newValue;
                           });
                         },
                       ),
