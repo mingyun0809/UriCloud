@@ -59,7 +59,7 @@ class _EditMaterialState extends State<EditMaterial> {
 
     if (materialName.isEmpty || classcification == null || stockUnit == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("모든 항목을 입력해주세요.")),
+        const SnackBar(content: Text("모든 항목을 입력해주세요.")),
       );
       return;
     }

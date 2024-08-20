@@ -22,7 +22,18 @@ class MenuDrawer extends StatelessWidget {
                 ),
               );
             },
-          )
+          ),
+          ListTile(
+            title: const Text("원자재 입출고"),
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const RawMaterialDelieverPage())
+              )
+            },
+          ),
         ],
       ),
     );
