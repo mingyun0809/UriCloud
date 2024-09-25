@@ -119,7 +119,7 @@ class _EditMaterialState extends State<EditMaterial> {
                       width: 24,
                     ),
                     DropdownButton<String>(
-                      value: selectedMaterial2,
+                      value: selectedMaterial1,
                       items: MaterialClass1.map<DropdownMenuItem<String>>(
                             (String value) {
                           return DropdownMenuItem<String>(
@@ -130,7 +130,7 @@ class _EditMaterialState extends State<EditMaterial> {
                       ).toList(),
                       onChanged: (String? newValue) {
                         setState(() {
-                          selectedMaterial2 = newValue;
+                          selectedMaterial1 = newValue;
                         });
                       },
                     ),
@@ -154,7 +154,7 @@ class _EditMaterialState extends State<EditMaterial> {
                         width: 24,
                       ),
                       DropdownButton<String>(
-                        value: selectedMaterial1,
+                        value: selectedMaterial2,
                         items: MaterialClass2.map<DropdownMenuItem<String>>(
                               (String value) {
                             return DropdownMenuItem<String>(
@@ -165,7 +165,7 @@ class _EditMaterialState extends State<EditMaterial> {
                         ).toList(),
                         onChanged: (String? newValue) {
                           setState(() {
-                            selectedMaterial1 = newValue;
+                            selectedMaterial2 = newValue;
                           });
                         },
                       ),
